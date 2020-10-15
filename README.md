@@ -6,6 +6,9 @@ Proof of concept for ONE Elasticsearch cluster with geolocation separated data u
 
 In this example we will separate US and EU data for the use-case of data privacy laws. Data will reside in ONE ES cluster, on nodes in different geographies.
 
+[Results can be seen here](/docs/results.md)
+
+
 ## Prerequisites
 1. Docker & docker-compose
 2. Python3 with pip
