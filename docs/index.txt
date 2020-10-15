@@ -1,0 +1,56 @@
+{
+  "index_templates" : [
+    {
+      "name" : "data-us",
+      "index_template" : {
+        "index_patterns" : [
+          "data-us-*"
+        ],
+        "template" : {
+          "settings" : {
+            "index" : {
+              "number_of_shards" : "1",
+              "number_of_replicas" : "0",
+              "routing" : {
+                "allocation" : {
+                  "include" : {
+                    "geo_locaton" : "us"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "composed_of" : [ ],
+        "priority" : 100,
+        "version" : 1
+      }
+    },
+    {
+      "name" : "data-eu",
+      "index_template" : {
+        "index_patterns" : [
+          "data-eu-*"
+        ],
+        "template" : {
+          "settings" : {
+            "index" : {
+              "number_of_shards" : "1",
+              "number_of_replicas" : "0",
+              "routing" : {
+                "allocation" : {
+                  "include" : {
+                    "geo_locaton" : "eu"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "composed_of" : [ ],
+        "priority" : 100,
+        "version" : 1
+      }
+    }
+  ]
+}
