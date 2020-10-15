@@ -13,6 +13,24 @@ In this example we will separate US and EU data for the use-case of data privacy
 1. Docker & docker-compose
 2. Python3 with pip
 
+NOTE: `docker-compose.yml` is tagging ES nodes with `geo_location` attribute (attribute can have different name).
+
+```
+ es01:
+    container_name: es01
+    environment:
+      - node.name=es01
+      - node.attr.geo_locaton=us
+      
+  es02:
+    container_name: es02
+    environment:
+      - node.name=es02
+      - node.attr.geo_locaton=eu
+```
+
+With the above configuration, `es01` becomes node for US data storage and `es02` becomes node for EU data storage.
+
 ## Setup
 
 1. Spin-up environmnet using docker-compose
@@ -39,7 +57,9 @@ In this example we will separate US and EU data for the use-case of data privacy
     python scripts/generate-test-data.py
     ```
 
-5. Validate results
+5. Validate results 
+
+   [Results can be seen here](/docs/results.md)
 
 ## Index Templates
 
